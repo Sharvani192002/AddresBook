@@ -17,4 +17,22 @@ public class AddressBook {
             System.out.println(contact);
         }
     }
+
+    public Contact findContactByName(String firstName, String lastName) {
+        for (Contact contact : contacts) {
+            if (contact.getFirstName().equalsIgnoreCase(firstName) && contact.getLastName().equalsIgnoreCase(lastName)) {
+                return contact;
+            }
+        }
+        return null;
+    }
+
+    public void editContact(Contact contact, String address, String city, String state, String zip, String phoneNumber, String email) {
+        contact.setAddress(address);
+        contact.setCity(city);
+        contact.setState(state);
+        contact.setZip(zip);
+        contact.setPhoneNumber(phoneNumber);
+        contact.setEmail(email);
+    }
 }
